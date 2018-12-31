@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GPR Site Shorten Link</title>
+    <meta name="description" content="List of Shorten Link in all GPR site" />
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      a {
+        color: blue;
+        text-decoration: none;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        border: 1px solid black;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>GPR Site Shorten Link</h1></header>
+    <section class="content">
+      <h3>List of Shorten Link in all GPR site</h3>
+      <ul>
+        {% for item in data %}
+        <li>
+          <b>Link : </b> <a href="{{ item.link }}">{{ item.link }}</a> <br />
+          <b>Title : </b> {{ item.title }} <br />
+          <b>Slug : </b>
+          <input type="text" value="{{ request.get_host }}/{{ item.slug }}/" />
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <footer>
+      <p>There is bug or you want to contribute?</p>
+      <p>
+        Submit your pull request
+        <a href="https://github.com/gagahpangeran/gpr-url-django">here</a>
+      </p>
+    </footer>
+  </body>
+</html>

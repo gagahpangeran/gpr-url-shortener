@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ link.title }}</title>
+    <meta name="description" content="{{ link.description }}" />
+    <meta http-equiv="Refresh" content="1; url={{ link.link }}" />
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      a {
+        color: blue;
+        text-decoration: none;
+      }
+
+      .content {
+        color: white;
+        user-select: none;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="redirect">
+      <p>
+        Click <a href="{{ link.link }}">{{ link.link }}</a> if not redirect
+        automatically
+      </p>
+    </section>
+    <section class="content">
+      <h1>{{ link.title }}</h1>
+      <p>{{ link.description }}</p>
+    </section>
+  </body>
+</html>
